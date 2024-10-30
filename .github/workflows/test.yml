@@ -1,0 +1,13 @@
+name: Test
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '!bench')
+    steps:
+      - name: List files
+        run: ls -la
