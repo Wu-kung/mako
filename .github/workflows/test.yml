@@ -7,7 +7,7 @@ on:
 jobs:
   trigger:
     runs-on: ubuntu-latest
-    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '!bench')
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '!test')
     steps:
       - name: List files
         run: ls -la
